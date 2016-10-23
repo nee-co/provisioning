@@ -1,0 +1,15 @@
+[local-dev]
+localhost ansible_connection=local
+
+[neeco:children]
+neec.xyz
+neec.ooo
+
+[neec.xyz]
+neec.xyz ansible_host=133.130.117.111
+
+[neec.ooo]
+neec.ooo ansible_host=x.x.x.x
+
+[neeco:vars]
+ansible_user=neeco
