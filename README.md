@@ -25,18 +25,18 @@ PARAM="-l neeco -t dokcer:engine" make play # neeco インベントリグルー�
 ```
 
 ### 使用可能なタグ (`--tags or -t`)
-| key | 役割 | バージョンの指定 |
-| --- | --- | --- |
-| `common:setup` | *install* common pkgs | 可 |
-| `common:hostname` | *configure* hostname | n/a |
-| `docker:engine` | *install* docker engine | 可 |
-| `docker:compose` | *install* docker compose | 可 |
-| `docker:daemon` | *configure* docker daemon | n/a |
-| `rancher:server` | *install* rancher server | 可 |
-| `rancher:agent` | *install* rancher agent | 可 |
-| `rancher:compose` | *install* rancher compose | 可 |
-| `rancher:cli` | *install* rancher cli | 可 |
-
+| key | 役割 | バージョンの指定 | メモ |
+| --- | --- | --- | --- |
+| `common:setup` | *install* common pkgs | 可 | |
+| `common:hostname` | *configure* hostname | n/a | |
+| `docker:engine` | *install* docker engine | 可 | |
+| `docker:compose` | *install* docker compose | 可 | |
+| `docker:daemon` | *configure* docker daemon | n/a | |
+| `rancher:server` | *install* rancher server | 可 | |
+| `rancher:agent` | *install* rancher agent | 可 | |
+| `rancher:compose` | *install* rancher compose | 可 | |
+| `rancher:cli` | *install* rancher cli | 可 | |
+| `firewall:setup` | *configure* firewall | n/a | Ubuntu: `ufw`, CentOS 7: `firewalld` |
 
 ### バージョンの管理 (`--extra-vars or -e`)
 | key | 既定値 | 関連するタグ | メモ |

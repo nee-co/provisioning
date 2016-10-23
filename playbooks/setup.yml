@@ -5,3 +5,4 @@
     - role: common
     - role: docker
     - role: rancher
+    - role: firewall

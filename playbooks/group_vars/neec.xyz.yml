@@ -1,0 +1,17 @@
+---
+# NOTICE:
+# Ubuntu + docker の場合、既定で iptables を自動的に書き換えるため、firewall (ufw) の設定を無視されるため false フラグとする。
+docker_daemon_config:
+  dns:
+    - 8.8.8.8
+    - 8.8.4.4
+  iptables: false
+
+allowed_proto_tcp:
+  - 22
+  - 80
+  - 443
+  # used by docker registry.
+  - 5000
+  # used by the Portus (front-ui for registry).
+  - 5080
