@@ -1,7 +1,7 @@
 PLAY = ansible-playbook ./playbooks/setup.yml $(PARAM)
 
 install-ansible: PH
-	wget --quiet --output-document - https://github.com/5003/get-pip-ansible/raw/master/install_ansible.sh | sh && ansible --version
+	. ./install_ansible.sh
 
 play: PH
 ifneq (, $(findstring local, $(MAKECMDGOALS)))
