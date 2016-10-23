@@ -1,0 +1,4 @@
+---
+docker_daemon_config:
+  insecure-registries:
+    - neec.xyz:5000
