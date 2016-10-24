@@ -1,0 +1,5 @@
+---
+allowed_proto_tcp:
+  - 22
+  - 80
+  - 443
