@@ -1,0 +1,6 @@
+image: 5003/centos-ansible-ci:2.1.x
+pipelines:
+  default:
+    - step:
+        script:
+          - PARAM="-vv -l local-dev -t common:setup" make play
