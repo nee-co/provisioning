@@ -3,4 +3,5 @@ pipelines:
   default:
     - step:
         script:
-          - PARAM="-vv -l local-dev -t common:setup" make play
+          - PARAM="--verbose --user prov --extra-vars ansible_ssh_pass=$PROV_PASS"
+          - PARAM="--limit neec.xyz --tags common:setup,common:hostname,docker:engine,docker:compose $PARAM" make play
