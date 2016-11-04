@@ -1,4 +1,20 @@
 ---
+- block:
+    - group: name=sudo state=present
+    - copy: content="%sudo ALL=(ALL:ALL) NOPASSWD:ALL" dest=/etc/sudoers.d/sudo mode=0440
+    - user: name=neeco groups=sudo
+    - user: name=prov groups=sudo password=$6$rounds=656000$TfXvGXbvfGZi2PKG$sy1TD1rvpcx9ePOqGTDw8PipzK95Jklh3sjPMb8K7CF827Es8jiKdy2JhUratQtTruCDhfLfCCGKUapMmwgcd1
+  when: ansible_user == 'root'
+  tags:
+    - common:setup
+
+- name: ======
+  authorized_key: user=neeco key={{ item }} state=present
+  become: yes
+  with_items: "{{ ssh_pub_keys }}"
+  tags:
+    - common:setup
+
 - name: ======
   set_fact:
     common_popular_package:
