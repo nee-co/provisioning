@@ -4,4 +4,4 @@ pipelines:
     - step:
         script:
           - PARAM="--verbose --user prov --extra-vars ansible_ssh_pass=$PROV_PASS"
-          - PARAM="--limit neec.xyz --tags common:setup,common:hostname,docker:engine,docker:compose $PARAM" make play
+          - PARAM="--limit neeco --tags common:setup,common:hostname,docker:engine,docker:compose $PARAM" make play
