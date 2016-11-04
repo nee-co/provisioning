@@ -9,4 +9,4 @@ neec.ooo
 neec.xyz ansible_host=133.130.117.111
 
 [neec.ooo]
-neec.ooo ansible_host=x.x.x.x
+neec.ooo ansible_host=163.44.166.216
