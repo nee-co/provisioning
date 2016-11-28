@@ -1,0 +1,52 @@
+---
+- name: ======
+  user: name={{ item.name }}
+  become: yes
+  with_items: "{{ define_new_user }}"
+  tags:
+    - common:setup
+
+- name: ======
+  copy: src=ssh/sshd_config dest=/etc/ssh/ mode=0600
+  become: yes
+  notify:
+    - restart service
+
+- name: ======
+  copy: src=sudo/prov dest=/etc/sudoers.d/ mode=0440
+  become: yes
+
+- name: ======
+  user:
+    name: "{{ item.0.name }}"
+    groups: "{{ item.1 }}"
+    append: yes
+  become: yes
+  with_subelements:
+    - "{{ define_new_user }}"
+    - groups
+
+- name: ======
+  authorized_key: user={{ item.0.name }} key={{ item.1 }} exclusive=no
+  become: yes
+  with_subelements:
+    - "{{ define_new_user }}"
+    - key
+
+- block:
+    - ufw: state=enabled policy=deny
+      become: yes
+      name: ---
+    - ufw: state=enabled policy=allow direction=outgoing
+      become: yes
+      name: ---
+    - ufw: rule=allow port=22 proto=tcp
+      become: yes
+      name: ---
+  when: ansible_distribution | lower == 'ubuntu'
+
+- block:
+    - firewalld: port=22/tcp permanent=yes state=enabled immediate=yes
+      become: yes
+      name: ---
+  when: ansible_distribution | lower == 'centos'

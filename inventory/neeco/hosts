@@ -5,6 +5,9 @@ localhost ansible_connection=local
 neec.xyz
 neec.ooo
 
+[neeco:vars]
+ansible_user=prov
+
 [neec.xyz]
 neec.xyz ansible_host=133.130.117.111
 
