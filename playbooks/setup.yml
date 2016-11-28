@@ -2,7 +2,9 @@
 - name: get started
   hosts: all
   roles:
+    - role: production
+      tags:
+        - production
     - role: common
     - role: docker
     - role: rancher
-    - role: firewall
