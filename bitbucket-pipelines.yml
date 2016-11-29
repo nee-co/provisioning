@@ -5,5 +5,5 @@ pipelines:
         script:
           - COMMON_PARAM="--verbose --limit neeco --extra-vars ansible_ssh_pass=$PROV_PASS"
           - PARAM="$COMMON_PARAM --tags common:setup,common:hostname" make play
-          - PARAM="$COMMON_PARAM --tags docker:engine,docker:compose,docker:daemon" make play
+          - PARAM="$COMMON_PARAM --tags docker:engine,docker:compose" make play
           - PARAM="$COMMON_PARAM --tags production" make play
