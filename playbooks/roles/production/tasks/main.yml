@@ -19,6 +19,7 @@
 - name: ======
   user:
     name: "{{ item.0.name }}"
+    password: "{{ item.0.password | default(omit) }}"
     groups: "{{ item.1 }}"
     append: yes
   become: yes
@@ -30,11 +31,11 @@
   authorized_key: user={{ item.0.name }} key={{ item.1 }} exclusive=no
   become: yes
   with_subelements:
-    - "{{ define_new_user }}"
+    - "{{ define_new_user | selectattr('key', 'defined') | list }}"
     - key
 
 - block:
-    - ufw: state=enabled policy=deny
+    - ufw: state=enabled policy=allow
       become: yes
       name: ---
     - ufw: state=enabled policy=allow direction=outgoing
