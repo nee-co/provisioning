@@ -9,6 +9,6 @@ define_new_user:
       - docker
 
   - name: prov
-    password: $6$rounds=656000$RS/id6.KG.RVU8Ig$iAHROHhQFyEA4yWd6bgMtZsy56.jDxkFtPgRTic8k5BpJzYubp1N9VHto30br0LeAYLB8cnESFfNFxZWJ5tJX.
+    password: $6$rounds=656000$xR7ebjRIjAbY7ya6$9Nofya2jfuzb7tt1RzfweIrWdQUiAU.uNzStg7fjH12aZdOjK27rgZoBu7TrlCeQgq/rSN1oPMDKo9VIoDKVI1
     groups:
       - docker
