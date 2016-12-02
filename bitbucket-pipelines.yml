@@ -3,7 +3,9 @@ pipelines:
   default:
     - step:
         script:
-          - COMMON_PARAM="--verbose --limit neeco --extra-vars ansible_ssh_pass=$PROV_PASS"
-          - PARAM="$COMMON_PARAM --tags common:setup,common:hostname" make play
-          - PARAM="$COMMON_PARAM --tags docker:engine,docker:compose" make play
-          - PARAM="$COMMON_PARAM --tags production" make play
+          - COMMON_PARAM="--verbose --extra-vars ansible_ssh_pass=$PROV_PASS"
+          - PARAM="$COMMON_PARAM --limit neeco --tags common:setup,common:hostname" make play
+          - PARAM="$COMMON_PARAM --limit neeco --tags docker:engine,docker:compose" make play
+          - PARAM="$COMMON_PARAM --limit neeco --tags production" make play
+          - PARAM="$COMMON_PARAM --limit neeco --tags production" make play
+          - PARAM="$COMMON_PARAM --limit neec.xyz --tags rancher:server --extra-vars server_url=rancher.neec.xyz" make play
