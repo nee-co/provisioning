@@ -6,3 +6,5 @@ pipelines:
           - PARAM="--verbose --limit neeco --tags common:setup,common:hostname" make play
           - PARAM="--verbose --limit neeco --tags docker:engine,docker:compose" make play
           - PARAM="--verbose --limit neeco --tags production" make play
+          - PARAM="--verbose --limit neec.bid --tags rancher:server" make play
+          - PARAM="--verbose --limit neec.ooo,neec.xyz --tags rancher:agent" make play
