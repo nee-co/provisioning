@@ -1,4 +1,6 @@
 ---
+ansible_ssh_pass: "{{ lookup('env', 'NEEC_XYZ_PROV_SSHPASS') }}"
+
 define_new_user:
   - name: neeco
     key:
@@ -9,11 +11,11 @@ define_new_user:
       - docker
 
   - name: prov
-    password: $6$rounds=656000$RS/id6.KG.RVU8Ig$iAHROHhQFyEA4yWd6bgMtZsy56.jDxkFtPgRTic8k5BpJzYubp1N9VHto30br0LeAYLB8cnESFfNFxZWJ5tJX.
+    password: $6$rounds=656000$cKHUazk3f.l9jxJV$PPvvfqLFwMEyFyuDyFrBSMyAWaaNxjzAKQAHVy3I9q1lp0J2B7Wfgb.xcyVtxDcgXP5GxveeJGNhVb1kPoreg1
     groups:
       - docker
 
   - name: ci
-    password: $6$rounds=656000$Jqu.JLGEKB.Mroa0$ZTvbnO2pFt2m5qTrbkyt1sjcuDP4hkniV9xRYzc0qIGG9uPpq6HJUfTQTn/UHtWMLMq18K2yxUKrT8/5ZpCZo/
+    password: $6$rounds=656000$/bRC/Gv4hWyLOuGD$en5L4rrz9a1450xEFydb3YjRh/FNrttcaNm8y2OoF61cHPcnNC0423KSVRZqeQXmJYJmpoHU628hcFikBtSvA/
     groups:
       - docker
