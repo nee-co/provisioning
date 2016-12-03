@@ -1,0 +1,16 @@
+---
+ansible_ssh_pass: "{{ lookup('env', 'NEEC_BID_PROV_SSHPASS') }}"
+
+define_new_user:
+  - name: neeco
+    key:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDCSlBPAz/rbgtuurIu8XjRFJGDY4kO7FX8yJdcP93M15cac5AbRtpp5r/SMYLBEjZXtwcPSxijPOTPSMszmQtqS0RQFmqbjAOULTc6ah/XMCjYKBh+EKvFvfQev1IRIPHCvzyQGQpWnKjs7HEos6J6ow7DREwoBrlJIwzoZpQDpwZaUlghZa273/3PYA+Nh2aBp/4e3LzqamdkgGpq7c8OlNMtRwHiLPL9Dt+RoW79QdxPIbceKXhgJi66NHWnrAIqCkkJCqixHq7vGnrJw93+3/+z21HeuBQYDwXhwpNsJGnKq33sb3rGCG4qMdn3kgioEym8Oc/0NqFMMzPe3HsWEaz3bTIQ3UFGkr9XO1OyNn6i2yNktsNY9yq+fghKFN22sfH+T2zmOind4jL6gdeQ2YUEeMK4cyfdWYe64bD5o4ky3NPaBYvdg0HqL8Wf0gAtpcsAXK7SNgkZM+S/2RtN+bXjXdsA7iR2tmJW2wFkhTmvsZuH4XV65CTlew+Dj7ezEnnR8OR0tfdwXhlvY0TC36sexKJFawj4J4EXztdC1R4hd8FvMFxv8S+OJeku8vfuc2vfnzpwjGV/XmD+Ps5DPo6P8xH2nmWV96e0SClQLFTZXHEAE2gpGkgx+gVI9Hca2bmD7glv1nAy30SZWJRVcDV1QV3c7NTP6oFzc9Q01Q== mito.5525@gmail.com
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDZ4wN9Kn2IVeGM4dJ3aTZV1guHe9/bhUAfQ7aTvZq0o8M2f6l4av9Or5dsKetDvTU0+xTJ4Qp7T1N8cjvNXXkTWbigq3Kv6MrMzwkBIxVXLE1kSJY+5GQ2OQulzUVTeOvzbNbKwotYPzORjvHwIXQ6oG1LtX5mSVSK1pNw8kJhcbVeVhYWMtda8skYw8Fr81Vzf7jRsUBWxjVod+ODOC3uVa7c5LW8wvQbmWX6lcSrkuDlgTqJTDs8b3jTX4Zb6YdVlYkJbC+WZHnGQimOSZGaIfOBENNxSWdrQEhITRfu4oV1dMqeiKNUVFzP4yqu4K5tzz421iBwEX0l+4EzyoRFSoKdYNPFLR6xklEBcBnMH+K2uk57XoZIZIVbulxpus1O+r/USwl3oV2buQeoyOJUvo2OT5YPUVYeEB6I3lmaQjIBqCfGnwXaqVtIG2/CW3MyAq/5m0Gbtgkx1LzjXldlHmkcDEmg9c9BbgCpIItTr+UmeKn9qWRjfxCoqLnjmLh0MCYdN/vG2lcuXenxwfvPw8tTvAdY4+THmd7of/V5EoAb7ICsHEE07ODNDuB36VM2Qvu4eAPAWxxt/ccYnO36sPOcqg07eqRd69ImEssjstFDHu6zdHHqEkxuClq9+a3X2gEJBmY/+ZssgQXhN3PyuEocTzJd1ZeILQyW2W1TMQ== 454e@outlook.jp
+    groups:
+      - prov
+      - docker
+
+  - name: prov
+    password: $6$rounds=656000$Xj1mCGzaVYo5/p8I$0y7/OMEAg2Jc7XBx1DZ0MqfCPky2d8Cpsy559edoTR157BMH54dXrwdUAvtEAd7oO9LFxiCZ6v8QYjoujvZZK/
+    groups:
+      - docker

@@ -17,9 +17,10 @@
       become: yes
       with_items:
         - python-apt
+        - apt-transport-https
         - "{{ common_popular_package }}"
       name: ---
-  when: ansible_distribution | lower == 'ubuntu'
+  when: ansible_pkg_mgr | lower == 'apt'
   tags:
     - common:setup
 
