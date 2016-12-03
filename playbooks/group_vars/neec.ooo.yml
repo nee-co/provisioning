@@ -1,4 +1,6 @@
 ---
+ansible_ssh_pass: "{{ lookup('env', 'NEEC_OOO_PROV_SSHPASS') }}"
+
 define_new_user:
   - name: neeco
     key:
