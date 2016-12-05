@@ -9,7 +9,8 @@
 | --- | --- | --- | --- | --- |
 | local-dev | localhost | | local | local-dev |
 | neec.xyz | 133.130.117.111 | Ubuntu 16.04 LTS | ssh (smart) | neeco, neec.xyz |
-| neec.ooo | x.x.x.x | CentOS 7.2 | ssh (smart) | neeco, neec.ooo |
+| neec.ooo | 163.44.166.216 | CentOS 7.2 | ssh (smart) | neeco, neec.ooo |
+| neec.bid | 133.130.119.187 | Debian GNU/Linux 8.5 | ssh (smart) | neeco, neec.bid |
 
 ## セットアップ
 Ansible のインストール (バージョン管理の観点から pip 経由)
@@ -42,14 +43,14 @@ PARAM="-l neeco -t dokcer:engine" make play # neeco インベントリグルー�
 | key | 既定値 | 関連するタグ | メモ |
 | --- | --- | --- | --- |
 | `docker_builds_selected` | *main* | `docker:engine` | *`main`, `testing`, `experimental`* |
-| `docker_engine_version` | *1.12.2* | `docker:engine` | |
-| `docker_compose_version` | *1.8.0* | `docker:compose` | |
-| `rancher_server_version` | *1.1.4* | `rancher:server` | |
+| `docker_engine_version` | *1.12.3* | `docker:engine` | |
+| `docker_compose_version` | *1.9.0* | `docker:compose` | |
+| `rancher_server_version` | *1.2.0* | `rancher:server` | |
 | `rancher_server_expose_port` | *8080* | `rancher:server` `rancher:agent` | |
-| `rancher_api_version` | *v1* | `rancher:agent` | *v1*, *v2-beta* |
+| `rancher_api_version` | *v2-beta* | `rancher:agent` | *v1*, *v2-beta* |
 | `rancher_agent_version` | *自動的に racher server 経由で取得* | `rancher:agent` | |
 | `rancher_compose_version` | *0.9.2* | `rancher:compose` | |
-| `rancher_cli_version` | *0.2.0* | `rancher:cli` | |
+| `rancher_cli_version` | *0.4.0* | `rancher:cli` | |
 
 ## neec.* への実行例
 ### neec.xyz
@@ -61,3 +62,4 @@ PARAM="-l neec.xyz -t common:setup,common:hostname,docker:engine,docker:compose 
 - CentOS 7.2
 - Ubuntu 16.04 LTS
 - Ubuntu 14.04 LTS
+- Debian GNU/Linux 8.5
