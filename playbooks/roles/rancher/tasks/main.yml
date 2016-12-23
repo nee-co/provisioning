@@ -2,14 +2,15 @@
 - name: ======
   set_fact:
     server_expose_port: "{{ rancher_server_expose_port | default('8080') }}"
-    server_url: "http://{{ rancher_server_fqdn | default(inventory_hostname) }}"
+    server_url: "http://{{ rancher_server_fqdn }}"
+  failed_when: rancher_server_fqdn is not defined
   tags:
     - rancher:server
     - rancher:agent
 
 - name: ======
   set_fact:
-    server_version: "v{{ rancher_server_version | default('1.2.0') }}"
+    server_version: "v{{ rancher_server_version | default('1.2.1') }}"
     container_name: "rancher-server"
   tags:
     - rancher:server
@@ -31,8 +32,9 @@
       delay: 10
       when: inspect_server | changed
       name: ---
-    - name: waiting for another application to complete
-      pause: minutes=2
+    - debug: msg="type {{ server_url }}:{{ server_expose_port }} into your browser address bar"
+      when: inspect_server | changed
+      name: ---
   tags:
     - rancher:server
 
@@ -93,7 +95,7 @@
 
 - name: ======
   set_fact:
-    compose_version: "v{{ rancher_compose_version | default('0.9.2') }}"
+    compose_version: "v{{ rancher_compose_version | default('0.12.1') }}"
   tags:
     - rancher:compose
 
@@ -113,7 +115,7 @@
 
 - name: ======
   set_fact:
-    cli_version: "v{{ rancher_cli_version | default('0.4.0') }}"
+    cli_version: "v{{ rancher_cli_version | default('0.4.1') }}"
   tags:
     - rancher:cli
 
