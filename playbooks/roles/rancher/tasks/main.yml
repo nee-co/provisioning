@@ -2,7 +2,8 @@
 - name: ======
   set_fact:
     server_expose_port: "{{ rancher_server_expose_port | default('8080') }}"
-    server_url: "http://{{ rancher_server_fqdn | default(inventory_hostname) }}"
+    server_url: "http://{{ rancher_server_fqdn }}"
+  failed_when: rancher_server_fqdn is not defined
   tags:
     - rancher:server
     - rancher:agent

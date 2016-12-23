@@ -8,6 +8,7 @@ neec.bid
 
 [neeco:vars]
 ansible_user=prov
+rancher_server_fqdn=neec.bid
 
 [neec.xyz]
 neec.xyz ansible_host=133.130.117.111
