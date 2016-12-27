@@ -49,8 +49,8 @@ PARAM="-l neeco -t dokcer:engine" make play # neeco インベントリグルー�
 | `rancher_server_expose_port` | *8080* | `rancher:server` `rancher:agent` | |
 | `rancher_api_version` | *v2-beta* | `rancher:agent` | *v1*, *v2-beta* |
 | `rancher_agent_version` | *自動的に racher server 経由で取得* | `rancher:agent` | |
-| `rancher_compose_version` | *0.9.2* | `rancher:compose` | |
-| `rancher_cli_version` | *0.4.0* | `rancher:cli` | |
+| `rancher_compose_version` | *0.12.1* | `rancher:compose` | |
+| `rancher_cli_version` | *0.4.1* | `rancher:cli` | |
 
 ## neec.* への実行例
 ### neec.xyz
