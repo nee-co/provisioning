@@ -16,6 +16,7 @@
 Ansible のインストール (バージョン管理の観点から pip 経由)
 ```sh
 make install-ansible
+# current version: 2.1.4.0
 ```
 
 次のように `PARAM` 変数に対して ansible-playbook コマンドにおける任意のオプションを設定 (ref: `ansible-playbook --help`)

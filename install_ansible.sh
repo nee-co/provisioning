@@ -14,6 +14,7 @@ if [ "$(id --name --user)" != 'root' ]
   fi
 fi
 
+version="==$1"
 command -v yum &&
   $sh_c 'sleep 3
     yum --assumeyes install epel-release &&
@@ -40,4 +41,4 @@ command -v apt-get &&
                                  sshpass \
                                  git'
 
-$sh_c 'pip install ansible'
+$sh_c "pip install ansible${1:+$version}"
