@@ -44,7 +44,7 @@ PARAM="-l neeco -t dokcer:engine" make play # neeco インベントリグルー�
 | key | 既定値 | 関連するタグ | メモ |
 | --- | --- | --- | --- |
 | `docker_builds_selected` | *main* | `docker:engine` | *`main`, `testing`, `experimental`* |
-| `docker_engine_version` | *1.12.3* | `docker:engine` | |
+| `docker_engine_version` | *1.13.0* | `docker:engine` | |
 | `docker_compose_version` | *1.9.0* | `docker:compose` | |
 | `rancher_server_version` | *1.2.0* | `rancher:server` | |
 | `rancher_server_expose_port` | *8080* | `rancher:server` `rancher:agent` | |
